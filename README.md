@@ -125,6 +125,14 @@ The first step is to compile the optional third party dependencies:
     cd $PYMESH_PATH/third_party
     build.py all
 
+(If an error occurs about missing GMP, run following command.)
+
+```bash
+sudo apt-get install libmpfr-dev
+sudo apt-get install libgmp-dev
+sudo apt-get install libboost-all-dev
+```
+
 Third party dependencies will be installed in
 `$PYMESH_PATH/python/pymesh/third_party` directory.
 
