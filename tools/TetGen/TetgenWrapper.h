@@ -174,7 +174,9 @@ class TetgenWrapper {
         void run();
 
         const MatrixFr& get_vertices() const { return m_tet_vertices; }
+        const VectorI& get_vertex_markers() const { return m_tet_vertex_markers; }
         const MatrixIr& get_faces() const { return m_tet_faces; }
+        const VectorI& get_face_markers() const { return m_tet_face_markers; }
         const MatrixIr& get_voxels() const { return m_tet_voxels; }
         const VectorI& get_regions() const { return m_regions; }
 
@@ -206,7 +208,9 @@ class TetgenWrapper {
 
         // Tetgen outputs
         MatrixFr m_tet_vertices;
+        VectorI m_tet_vertex_markers;
         MatrixIr m_tet_faces;
+        VectorI m_tet_face_markers;
         MatrixIr m_tet_voxels;
         VectorI  m_regions;
 };

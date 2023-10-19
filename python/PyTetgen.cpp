@@ -80,7 +80,11 @@ void init_TetgenWrapper(py::module& m) {
         .def("run", &TetgenWrapper::run)
         .def_property_readonly("vertices", &TetgenWrapper::get_vertices,
                 py::return_value_policy::reference_internal)
+        .def_property_readonly("vertex_markers", &TetgenWrapper::get_vertex_markers,
+                py::return_value_policy::reference_internal)
         .def_property_readonly("faces", &TetgenWrapper::get_faces,
+                py::return_value_policy::reference_internal)
+        .def_property_readonly("face_markers", &TetgenWrapper::get_face_markers,
                 py::return_value_policy::reference_internal)
         .def_property_readonly("voxels", &TetgenWrapper::get_voxels,
                 py::return_value_policy::reference_internal)

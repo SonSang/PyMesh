@@ -102,9 +102,23 @@ void TetgenWrapper::run() {
     m_tet_vertices.resize(out.numberofpoints, 3);
     std::copy(out.pointlist, out.pointlist + out.numberofpoints*3,
             m_tet_vertices.data());
+
+    if (out.pointmarkerlist) {
+        m_tet_vertex_markers.resize(out.numberofpoints);
+        std::copy(out.pointmarkerlist, out.pointmarkerlist + out.numberofpoints,
+            m_tet_vertex_markers.data());
+    }
+    
     m_tet_faces.resize(out.numberoftrifaces, 3);
     std::copy(out.trifacelist, out.trifacelist + out.numberoftrifaces*3,
             m_tet_faces.data());
+
+    if (out.trifacemarkerlist) {
+        m_tet_face_markers.resize(out.numberoftrifaces);
+        std::copy(out.trifacemarkerlist, out.trifacemarkerlist + out.numberoftrifaces,
+                m_tet_face_markers.data());
+    }
+            
     m_tet_voxels.resize(out.numberoftetrahedra, 4);
     std::copy(out.tetrahedronlist, out.tetrahedronlist + out.numberoftetrahedra*4,
             m_tet_voxels.data());
